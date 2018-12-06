@@ -1,0 +1,16 @@
+@import '../../../../styles/main';
+
+.dialog-content {
+    overflow: hidden !important;
+    max-height: fit-content !important;
+
+    mat-card {
+        margin-bottom: 10px;
+    
+        .undertext {
+            line-height: 1.2em;
+            font-size: 0.9em;
+            color: $app-gray;
+        }
+    }
+}

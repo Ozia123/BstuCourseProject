@@ -1,0 +1,18 @@
+<div class="content text-center">
+    <h1>{{ 'title-page.title' | translate }}</h1>
+    <h1>{{ 'title-page.sub-title' | translate }}</h1>
+
+    <div class="section">
+        <img [src]="'title-page.content.picture' | translate" />
+        <em>{{ 'title-page.content.picture-text' | translate }}</em>
+
+        <br/>
+        <div [innerHtml]="'title-page.content.page-text' | translate"></div>
+    </div>
+
+    <div class="centered-content">
+        <button mat-raised-button  color="primary" routerLink="/page/1">
+            {{ 'title-page.content.next' | translate }}
+        </button>
+    </div>
+</div>

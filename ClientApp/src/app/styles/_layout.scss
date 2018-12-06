@@ -1,0 +1,64 @@
+@import 'variables';
+
+body {
+    font-size:100%; 
+    line-height:1.5;
+}
+
+@media screen and (max-width: $small-screen) {
+    body { font-size: 90%;}
+}
+
+.content {
+    margin-top: 64px;
+    margin-bottom: 64px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.button-wrap {
+    position: relative;
+    width: 100%;
+
+    button {
+        margin-right: 7px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+h1 {
+    font-size: 2.747em;
+}
+
+h2 {
+    font-size: 0.874em;
+}
+
+h3 {
+    font-size:1.229em;
+}
+
+.section {
+    max-width: 40em;
+    margin: auto;
+    padding: 0 1em;
+
+    img {
+        display: block;
+        max-width: 40em;
+        margin: 20px auto;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.centered-content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

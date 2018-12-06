@@ -1,0 +1,22 @@
+<div class="content home-wrap">
+    <h1>
+        {{ 'home.title' | translate }}
+    </h1>
+
+    <div class="section">
+        <p>
+            {{ 'home.goal' | translate }}
+        </p>
+    </div>
+    
+    <div class="button-wrap">
+        <div class="centered-content">
+            <button mat-button  color="primary" routerLink="/contents">
+                {{ 'contents.title' | translate }}
+            </button>
+            <button mat-raised-button color="accent" routerLink="/title-page">
+                {{ 'home.submit' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

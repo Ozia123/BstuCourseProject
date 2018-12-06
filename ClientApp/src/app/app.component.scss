@@ -1,0 +1,11 @@
+@import './styles/main';
+
+app-nav-menu {
+    width: 100%;
+    position: fixed;
+    z-index: 900;
+}
+
+.body-content {
+    margin-top: 40px;
+}

@@ -1,0 +1,76 @@
+@import '../../../../styles/main';
+
+.dialog-header {
+    display: flex;
+    margin-bottom: 0 !important;
+    
+    &-title {
+        font-size: 1.3em;
+        flex: 1 1 auto;
+        margin: auto;
+    }
+
+    &-options {
+        mat-select {
+            font-size: initial;
+        }
+    }
+}
+
+.dialog-content {
+    display: table;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -50%);
+
+    .temperature {
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 4em;
+    }
+
+    .description {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 2em;
+        font-size: 1em;
+
+        &-block {
+            display: block;
+            color: $app-gray;
+        }
+    }
+}
+
+%background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 24px;
+    height: 100%;
+}
+
+.weather-sun {
+    @extend %background;
+    background-image: url(/images/weather/sun.jpg)
+}
+
+.weather-mist {
+    @extend %background;
+    background-image: url(/images/weather/mist.jpg)
+}
+
+.weather-rain {
+    @extend %background;
+    background-image: url(/images/weather/rain.jpg)
+}
+
+.weather-snow {
+    @extend %background;
+    background-image: url(/images/weather/snow.jpg)
+}
+
+.weather-clouds {
+    @extend %background;
+    background-image: url(/images/weather/mist.jpg)
+}

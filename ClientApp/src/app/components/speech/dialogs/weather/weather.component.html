@@ -1,0 +1,30 @@
+<div *ngIf="forecast" [class]="'weather-' + forecast.weather[0].main.toLowerCase()">
+    <div mat-dialog-title class="dialog-header">
+        <div class="dialog-header-title">
+            <mat-icon *ngIf="forecast.weather[0].description == 'sun'">wb_sunny</mat-icon>
+            <mat-icon *ngIf="forecast.weather[0].description != 'sun'">wb_cloudy</mat-icon>
+            {{ forecast.name }}
+        </div>
+        <mat-form-field class="dialog-header-options">
+            <mat-select [formControl]="temperatureUnitPanel" (selectionChange)="changeCurrentTemperatureUnit($event)">
+                <mat-option *ngFor="let unit of temperatureUnits" [value]="unit.value">
+                    {{ unit.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-content class="dialog-content">
+        <div class="temperature">
+            {{ convert(forecast.main.temp) }}<b>{{ getCurrentTemperatureUnit() }}</b>
+        </div>
+
+        <div class="description">
+            <div class="description-block">
+                {{ getCurrentDate() }}
+            </div>
+            <div class="description-block">
+                {{ forecast.weather[0].main }}
+            </div>
+        </div>
+    </div>
+</div>

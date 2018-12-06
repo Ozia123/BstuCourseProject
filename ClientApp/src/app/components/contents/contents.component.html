@@ -1,0 +1,26 @@
+<div class="content">
+    <h1>
+        {{ 'contents.title' | translate }}
+    </h1>
+    
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+        <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+            <button mat-icon-button disabled>
+                <mat-icon>trip_origin</mat-icon>
+            </button>
+            
+            <a [routerLink]="node.path">{{ node.name | translate }}</a>
+        </mat-tree-node>
+        
+        <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'toggle ' + node.name">
+                <mat-icon class="mat-icon-rtl-mirror">
+                    {{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}
+                </mat-icon>
+            </button>
+
+            {{ node.name | translate }}
+        </mat-tree-node>
+    </mat-tree>
+</div>

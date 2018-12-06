@@ -1,0 +1,18 @@
+<div class="content">
+    <h1>{{ 'theory-page.lab-' + page + '.title' | translate }}</h1>
+
+    <div class="section" 
+        [innerHtml]="'theory-page.lab-' + page + '.content' | translate">
+    </div>
+
+    <div class="button-wrap">
+        <div class="centered-content">
+            <button *ngIf="page != 1" mat-button color="primary" [routerLink]="getPreviousPageUrl()">
+                {{ 'theory-page.button.previous' | translate }}
+            </button>
+            <button mat-raised-button  color="primary" [routerLink]="getNextPageUrl()">
+                {{ 'theory-page.button.next' | translate }}
+            </button>
+        </div>
+    </div>
+</div>
