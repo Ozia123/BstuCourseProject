@@ -29,7 +29,7 @@ export const translations: {[key: string]: any} = {
             'sub-title' : 'Факультет ИТ',
 
             'content' : {
-                'picture' : 'images/pic0.png',
+                'picture' : 'images/pic0.jpg',
                 'picture-text' : 'Установка для выполнения лабораторной работы',
                 'page-text' : `
                     <p>
@@ -70,7 +70,7 @@ export const translations: {[key: string]: any} = {
             'lab-2' : {
                 'title' : '2. Описание установки и метода измерений',
                 'content' : `
-                    <img src="images/pic1.png" />
+                    <img src="images/pic1.jpg" />
                     <em>Рис. 1</em>
     
                     <p>
@@ -97,7 +97,7 @@ export const translations: {[key: string]: any} = {
                         длиной волны λ <em>(рис. 2)</em>.
                     </p>
     
-                    <img src="images/pic2.png" />
+                    <img src="images/pic2.jpg" />
                     <em>Рис. 2</em>
     
                     <p>
@@ -108,19 +108,19 @@ export const translations: {[key: string]: any} = {
                     </p>
     
                     <p>Из формул для определения координат максимумов интенсивности</p>
-                    <img src="images/form1.png" />
+                    <img src="images/form1.jpg" />
     
                     <p>и минимумов интенсивности</p>
-                    <img src="images/form2.png" />
+                    <img src="images/form2.jpg" />
     
                     <p>
                         <em>m = 0, 1, 2, …,</em> следует, что расстояние между полосами и ширина Δx
                         полосы имеют одинаковое значение, т. е. 
                     </p>
-                    <img src="images/form3.png" />
+                    <img src="images/form3.jpg" />
     
                     <p>Измерив на опыте значения l, d и Δх, из формулы (1) находим длину световой волны</p>
-                    <img src="images/form4.png" />
+                    <img src="images/form4.jpg" />
                 `
             },
 
@@ -128,7 +128,7 @@ export const translations: {[key: string]: any} = {
                 'title' : '3. Порядок выполнения работы и обработка результатов измерений',
                 'content' : `
                     <p>1. Подготовьте <em>табл. 1</em> для занесения и обработки результатов измерений.</p>
-                    <img src="images/tbl1.png"/>
+                    <img src="images/tbl1.jpg"/>
                     <em>Таблица 1</em>
     
                     <p>Подготовка установки к работе.</p>
