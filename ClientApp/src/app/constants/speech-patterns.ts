@@ -6,7 +6,7 @@ export const SpeechPatterns = [
         patterns: [/^weather$/, /^погода$/] 
     },
     {
-        dialog: config.dialogs.searchDialog,
+        dialog: config.dialogs.glossaryDialog,
         patterns: [/.*/]
     }
 ]

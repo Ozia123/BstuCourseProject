@@ -5,7 +5,7 @@ import { BaseService } from './base/base.service';
 
 @Injectable()
 export class ApiService extends BaseService {
-    private headers: any = { withCredentials: false };
+    private headers: any = { withCredentials: false, 'Access-Control-Allow-Origin': '*' };
 
     public constructor(private readonly http: HttpClient) {
         super();

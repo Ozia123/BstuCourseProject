@@ -7,10 +7,20 @@ export const config = {
     getForecast: (lat, lon) => 
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${environment.weatherMap.appId}`,
 
+    findInGlossary: (query) =>
+        `${environment.glossaryApiHost}/api/glossary?SearchString=${query}`,
+
     getSearchResult: (query) =>
         `https://www.googleapis.com/customsearch/v1?key=${environment.googleCustomSearch.apiKey}&cx=${environment.googleCustomSearch.searchEngineCode}&q=${query}`,
 
     dialogs: {
+        glossaryDialog: {
+            componentName: 'GlossaryComponent',
+            className: 'overlay-dialog-container',
+            width: DialogWidth.wide,
+            height: DialogHeight.high
+        },
+
         searchDialog: {
             componentName: 'SearchComponent',
             className: 'overlay-dialog-container',

@@ -4,6 +4,8 @@ import { getCurrentLanguageCode } from "./speech-helper/speech-helper";
 import { Subscription } from "rxjs";
 import { SpeechService } from "src/app/services/speech.service";
 import { MatDialog } from "@angular/material";
+import createDialog from "src/app/helpers/create-dialog-helper";
+import { config } from "src/app/constants/config";
 
 @Component({
     selector: 'app-speech',
@@ -71,7 +73,15 @@ export class SpeechComponent implements OnDestroy {
     private tryGetSearchResult(message: string) {
         this.speechService.openDialog(message)
             .subscribe(result => {
-                this.clearMessages();
+                if (result.nonSuccess) {
+                    createDialog(this.dialog, config.dialogs.searchDialog, message)
+                        .subscribe(() => {
+                            this.clearMessages();
+                        });
+                }
+                else {
+                    this.clearMessages();
+                }
             });
     }
 

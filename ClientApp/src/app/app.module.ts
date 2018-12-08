@@ -51,6 +51,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
         SpeechComponent,
         SpeechDialogs.SearchComponent,
         SpeechDialogs.WeatherComponent,
+        SpeechDialogs.GlossaryComponent,
         TranslatePipe,
     ],
     imports: [
@@ -81,6 +82,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     entryComponents: [
         SpeechDialogs.SearchComponent,
         SpeechDialogs.WeatherComponent,
+        SpeechDialogs.GlossaryComponent
     ],
     exports: [
         MatButtonModule

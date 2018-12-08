@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>
+    {{ 'speech.result' | translate }} '{{ data.message }}'
+</h1>
+<div *ngIf="items" mat-dialog-content class="dialog-content">
+    <mat-card *ngFor="let item of items" class="animated fadeInUp">
+        <div class="undertext" [innerHtml]="item.content"></div>
+    </mat-card>
+</div>
