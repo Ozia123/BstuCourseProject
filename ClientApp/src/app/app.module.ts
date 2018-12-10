@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { 
@@ -38,6 +38,7 @@ import { ApiService } from './services/api.service';
 
 import { getCurrentLanguageCode } from './components/speech/speech-helper/speech-helper';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ApplicationInterceptor } from './interceptor/application-interceptor';
 
 @NgModule({
     declarations: [
@@ -93,7 +94,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
         ContentsService,
         SpeechService,
         ApiService,
-        { provide: 'SPEECH_LANG', useValue: getCurrentLanguageCode() }
+        { provide: 'SPEECH_LANG', useValue: getCurrentLanguageCode() },
+        { provide: HTTP_INTERCEPTORS, useClass: ApplicationInterceptor, multi: true }
     ],
     bootstrap: [AppComponent]
 })

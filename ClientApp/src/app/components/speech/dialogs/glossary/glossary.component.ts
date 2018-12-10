@@ -4,6 +4,8 @@ import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
 import { config } from 'src/app/constants/config';
 import { Subscription } from 'rxjs';
 import { TranslatePipe } from 'src/app/pipes/translate.pipe';
+import { GlossaryFindResultModel } from 'src/app/models/glossary-find-result.model';
+import { GlossaryItemModel } from 'src/app/models/glossary-item.model';
 import { getSpeechSettings } from 'src/app/components/speech/speech-helper/speech-helper';
 import Speech from 'speak-tts';
 
@@ -16,7 +18,7 @@ export class GlossaryComponent implements OnInit, OnDestroy {
     private speech: Speech;
     private subscription: Subscription;
     
-    public items: Array<any>;
+    public items: Array<GlossaryItemModel>;
 
     public constructor(
         private readonly apiService: ApiService,
@@ -32,13 +34,11 @@ export class GlossaryComponent implements OnInit, OnDestroy {
 
         this.subscription = 
             this.apiService.get(url).subscribe(
-                result => {
+                (result: GlossaryFindResultModel) => {
                     this.items = result.items;
                     this.voiceSearchResult(result.items[0].content);
                 },
                 error => {
-                    console.error(error);
-                    this.voiceSearchResult(this.translatePipe.transform('speech.result-not-found'));
                     this.searchInWeb(this.data.message);
                 }
             );

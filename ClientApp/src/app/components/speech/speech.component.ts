@@ -50,6 +50,8 @@ export class SpeechComponent implements OnDestroy {
                     this.tryGetSearchResult(message.message);
 
                     this.stopListening();
+
+                    this.isListening = false;
                 }
             });
     }
@@ -66,8 +68,6 @@ export class SpeechComponent implements OnDestroy {
         if (this.speech.started) {
             this.speech.stop();
         }
-
-        this.isListening = false;
     }
 
     private tryGetSearchResult(message: string) {
